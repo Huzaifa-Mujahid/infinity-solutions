@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import { ArrowRight, Code, Users, Zap, Globe, Cpu, Rocket, Star, CheckCircle2, ChevronRight, Quote } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import HeroBackground from "@/components/hero-background"
 
 const featuredProjects = [
   {
@@ -198,16 +199,9 @@ export default function HomePage() {
     <div className="relative">
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden flex flex-col items-center text-center">
+        <HeroBackground />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-8 border border-blue-500/30 bg-blue-500/10 backdrop-blur-sm text-blue-300 text-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-blue-400 pulse-dot" />
-            Trusted by 50+ Companies
-          </motion.div>
+
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -498,12 +492,12 @@ export default function HomePage() {
         {/* Scrolling Brand Bar */}
         <div className="mt-20 py-12 border-t border-slate-800/50 overflow-hidden relative">
           <div className="flex animate-marquee whitespace-nowrap opacity-20 gap-20">
-            {["EMERGI MENTORS", "ALHANNA CLINIC", "HOT SEATS", "VITALIS UK", "SAFE HEAVEN", "TEAMPLAY", "TGFC UK", "DIALOG AI"].map((brand, bIdx) => (
+            {["EMERGI MENTORS", "Al Hanna Clinic", "HOT SEATS", "VITALIS UK", "SAFE HEAVEN", "TEAMPLAY", "TGFC UK", "DIALOG AI", "Hartman uk", "Kanova", "Fan District", "Site Swift"].map((brand, bIdx) => (
               <span key={bIdx} className="text-2xl font-black tracking-tighter text-slate-400">
                 {brand}
               </span>
             ))}
-            {["EMERGI MENTORS", "ALHANNA CLINIC", "HOT SEATS", "VITALIS UK", "SAFE HEAVEN", "TEAMPLAY", "TGFC UK", "DIALOG AI"].map((brand, bIdx) => (
+            {["EMERGI MENTORS", "Al Hanna Clinic", "HOT SEATS", "VITALIS UK", "SAFE HEAVEN", "TEAMPLAY", "TGFC UK", "DIALOG AI", "Hartman uk", "Kanova", "Fan District", "Site Swift"].map((brand, bIdx) => (
               <span key={bIdx+10} className="text-2xl font-black tracking-tighter text-slate-400">
                 {brand}
               </span>

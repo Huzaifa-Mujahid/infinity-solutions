@@ -4,6 +4,7 @@ import type React from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, Clock, Globe, MessageCircle, Headphones, Send } from "lucide-react"
 import { useState } from "react"
+import HeroBackground from "@/components/hero-background"
 
 const sectionEntrance = {
   initial: { opacity: 0, y: 48 },
@@ -39,7 +40,8 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="relative pt-32 pb-24 md:pt-48 md:pb-40">
+    <div className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
+      <HeroBackground />
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

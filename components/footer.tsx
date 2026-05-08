@@ -19,9 +19,7 @@ const navigation = {
     { name: "Privacy Policy", href: "#" },
   ],
   social: [
-    { name: "LinkedIn", href: "https://linkedin.com", icon: Linkedin },
     { name: "Twitter", href: "https://twitter.com", icon: Twitter },
-    { name: "GitHub", href: "https://github.com", icon: Github },
     { name: "Email", href: "mailto:info@infinitysolutions.agency", icon: Mail },
   ],
 }
