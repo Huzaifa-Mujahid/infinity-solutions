@@ -21,8 +21,59 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import HeroBackground from "@/components/hero-background"
 
 const fullStackServices = [
+  {
+    id: "saas-mvp-development",
+    title: "SaaS & MVP Development",
+    icon: Rocket,
+    description: "Launch scalable SaaS products and validate ideas faster with modern technologies and rapid development workflows",
+    longDescription:
+      "We build secure, high performance MVPs and SaaS platforms focused on user growth, automation, and long term scalability. From multi-tenant architectures to seamless payment integrations.",
+    features: [
+      "Multi-Tenant SaaS Architecture",
+      "MVP Development & Rapid Prototyping",
+      "Subscription & Payment Integration",
+      "User Authentication & Role Management",
+      "Admin Dashboards & Analytics",
+      "API Development & Third Party Integrations",
+      "Scalable Cloud Deployment & DevOps",
+      "AI Features & Workflow Automation",
+    ],
+    technologies: [
+      { name: "Next.js", icon: "▲" },
+      { name: "Node.js", icon: "🟢" },
+      { name: "PostgreSQL", icon: "🗄️" },
+      { name: "Stripe", icon: "💳" },
+    ],
+    number: "01",
+  },
+  {
+    id: "ai-development-services",
+    title: "AI Development Services",
+    icon: Cpu,
+    description: "Build intelligent AI powered applications and automation systems that improve productivity",
+    longDescription:
+      "We develop scalable AI solutions tailored for SaaS platforms, startups, and enterprise workflows. From custom LLM integrations to AI-powered workflow automation.",
+    features: [
+      "Custom AI Web Applications",
+      "AI Chatbots & Virtual Assistants",
+      "OpenAI & LLM Integrations",
+      "AI Powered Workflow Automation",
+      "Document Processing & AI Search",
+      "Recommendation & Personalization Systems",
+      "AI APIs & Backend Infrastructure",
+      "Real Time AI Features & Analytics",
+    ],
+    technologies: [
+      { name: "OpenAI", icon: "🤖" },
+      { name: "Python", icon: "🐍" },
+      { name: "LangChain", icon: "🧠" },
+      { name: "AWS", icon: "☁️" },
+    ],
+    number: "02",
+  },
   {
     id: "frontend-development",
     title: "Frontend Development",
@@ -45,7 +96,7 @@ const fullStackServices = [
       { name: "TypeScript", icon: "📘" },
       { name: "Tailwind CSS", icon: "🎨" },
     ],
-    number: "01",
+    number: "03",
   },
   {
     id: "backend-development",
@@ -68,7 +119,7 @@ const fullStackServices = [
       { name: "Supabase", icon: "⚡" },
       { name: "Python", icon: "🐍" },
     ],
-    number: "02",
+    number: "04",
   },
   {
     id: "full-stack-development",
@@ -90,7 +141,7 @@ const fullStackServices = [
       { name: "Laravel + Vue", icon: "🎨" },
       { name: "Next.js + Supabase", icon: "⚡" },
     ],
-    number: "03",
+    number: "05",
   },
   {
     id: "mobile-development",
@@ -112,7 +163,7 @@ const fullStackServices = [
       { name: "Swift", icon: "🍎" },
       { name: "Kotlin", icon: "🤖" },
     ],
-    number: "04",
+    number: "06",
   },
   {
     id: "ui-ux-design-solutions",
@@ -133,7 +184,7 @@ const fullStackServices = [
       { name: "Adobe XD", icon: "🖌" },
       { name: "Sketch", icon: "📐" },
     ],
-    number: "05",
+    number: "07",
   },
   {
     id: "devops-deployment",
@@ -155,7 +206,7 @@ const fullStackServices = [
       { name: "AWS", icon: "☁️" },
       { name: "GitHub Actions", icon: "🔄" },
     ],
-    number: "06",
+    number: "08",
   },
 ]
 
@@ -225,8 +276,8 @@ export default function ServicesPage() {
                         <ul className="space-y-4">
                           {service.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start text-slate-400 group-hover:translate-x-1 transition-transform" style={{ transitionDelay: `${idx * 0.05}s` }}>
-                              <CheckCircle className="h-5 w-5 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
-                              <span className="text-sm">{feature}</span>
+                              <CheckCircle className="h-4 w-4 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
+                              <span className="text-xs">{feature}</span>
                             </li>
                           ))}
                         </ul>
