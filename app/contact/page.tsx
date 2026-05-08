@@ -40,7 +40,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
+    <div className="relative pt-24 pb-16 md:pt-48 md:pb-40 overflow-hidden">
       <HeroBackground />
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -50,10 +50,10 @@ export default function ContactPage() {
           className="text-center mb-24"
         >
           <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">GET IN TOUCH</span>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8 text-gradient">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 md:mb-8 text-gradient">
             Bring Your Ideas To Life
           </h1>
-          <p className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-xl leading-relaxed px-2">
             We work with startups, businesses, and enterprises worldwide to build modern web, mobile, SaaS, and AI powered applications
           </p>
         </motion.div>

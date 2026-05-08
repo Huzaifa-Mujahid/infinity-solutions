@@ -219,7 +219,7 @@ const sectionEntrance = {
 
 export default function ServicesPage() {
   return (
-    <div className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
+    <div className="relative pt-24 pb-16 md:pt-48 md:pb-40 overflow-hidden">
       <HeroBackground />
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -229,10 +229,10 @@ export default function ServicesPage() {
           className="text-center mb-24"
         >
           <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">WHAT WE DO</span>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8 text-gradient">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 md:mb-8 text-gradient">
             Web, Mobile & AI Development Services
           </h1>
-          <p className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
+          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-xl leading-relaxed px-2">
             Comprehensive development services focused on building innovative, user friendly, and scalable applications for modern businesses
           </p>
         </motion.div>

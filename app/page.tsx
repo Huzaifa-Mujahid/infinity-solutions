@@ -209,7 +209,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8"
+            className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 md:mb-8"
           >
             <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">Infinity Solutions</span>
             <span className="text-white block">Turning Vision Into</span>
@@ -220,7 +220,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12"
+            className="max-w-3xl mx-auto text-slate-400 text-base md:text-xl leading-relaxed mb-8 md:mb-12 px-2"
           >
             We create high performance web and mobile applications, SaaS platforms, and AI powered solutions tailored for startups, businesses, and growing brands worldwide
           </motion.p>
@@ -229,13 +229,14 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 px-6"
           >
-            <Link href="/projects" className="btn-primary shimmer-btn px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-xl font-semibold text-white hover:shadow-lg hover:shadow-blue-500/20 transition-all">
-              View Our Work
+            <Link href="/contact" className="btn-primary w-full sm:w-auto">
+              Start Your Project
+              <ArrowRight className="h-4 w-4 ml-2" />
             </Link>
-            <Link href="/contact" className="btn-secondary px-8 py-4 border border-slate-700 bg-slate-800/50 backdrop-blur-sm text-slate-300 rounded-xl hover:border-slate-500 hover:bg-slate-700/50 hover:text-white transition-all">
-              Contact Us
+            <Link href="/projects" className="btn-secondary w-full sm:w-auto">
+              View Portfolio
             </Link>
           </motion.div>
 
