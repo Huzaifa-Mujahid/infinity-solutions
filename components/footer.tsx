@@ -107,15 +107,10 @@ export function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-slate-800 text-center">
           <p className="text-slate-600 text-xs">
             &copy; {new Date().getFullYear()} Infinity Solutions Agency. All rights reserved.
           </p>
-          <div className="flex space-x-6 text-xs text-slate-600">
-            <Link href="#" className="hover:text-slate-400 transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-slate-400 transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-slate-400 transition-colors">Cookies</Link>
-          </div>
         </div>
       </div>
     </footer>
