@@ -9,7 +9,7 @@ const teamMembers = [
   {
     name: "Adnan Hussain",
     title: "Founder & Business Manager",
-    image: "/images/adnan-hussain.jpg",
+    image: "/images/adnan-hussain.jpeg",
     bio: "Adnan founded Infinity Solutions with a vision to transform ideas into infinite possibilities through innovative technology. With extensive experience in business development and client relations, he leads the company's strategic direction and growth while ensuring reliable global client support.",
     skills: ["Business Development", "Strategic Planning", "Client Relations", "Project Management"],
   },
