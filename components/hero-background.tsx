@@ -38,19 +38,19 @@ export default function HeroBackground() {
 
   return (
     <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-      {/* Background Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#3b82f633,transparent_70%)]" />
+      {/* Background Gradients - Softened */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#3b82f61a,transparent_70%)]" />
       
-      {/* Animated Blobs */}
+      {/* Animated Blobs - Softened */}
       <motion.div 
         style={{ x: x1, y: y1 }}
-        className="absolute top-[-15%] right-[5%] w-[600px] h-[600px] bg-blue-500/25 rounded-full blur-[100px]"
+        className="absolute top-[-15%] right-[5%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px]"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
+          opacity: [0.1, 0.2, 0.1],
         }}
         transition={{
-          duration: 8,
+          duration: 10,
           repeat: Infinity,
           ease: "easeInOut"
         }}
@@ -58,58 +58,95 @@ export default function HeroBackground() {
       
       <motion.div 
         style={{ x: x2, y: y2 }}
-        className="absolute bottom-[-10%] left-[-5%] w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[130px]"
+        className="absolute bottom-[-10%] left-[-5%] w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[130px]"
         animate={{
           scale: [1, 1.1, 1],
-          opacity: [0.15, 0.3, 0.15],
+          opacity: [0.05, 0.15, 0.05],
         }}
         transition={{
-          duration: 12,
+          duration: 15,
           repeat: Infinity,
           ease: "easeInOut",
           delay: 2
         }}
       />
 
-      <motion.div 
-        style={{ x: x3, y: y3 }}
-        className="absolute top-[20%] left-[20%] w-[400px] h-[400px] bg-blue-400/20 rounded-full blur-[80px]"
-        animate={{
-          scale: [1, 1.3, 1],
-          opacity: [0.15, 0.35, 0.15],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
+      {/* Techy Layer: Floating Lines/Particles */}
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+          key={`line-${i}`}
+          style={{ 
+            x: useTransform(mouseX, [-1, 1], [Math.random() * -50, Math.random() * 50]),
+            y: useTransform(mouseY, [-1, 1], [Math.random() * -50, Math.random() * 50])
+          }}
+          className="absolute bg-blue-400/10"
+          initial={{
+            width: Math.random() * 100 + 50,
+            height: 1,
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+            rotate: Math.random() * 360
+          }}
+          animate={{
+            opacity: [0.1, 0.3, 0.1],
+          }}
+          transition={{
+            duration: 5 + Math.random() * 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
 
-      {/* Modern Grid Pattern - More visible */}
-      <div className="absolute inset-0 opacity-20" 
+      {/* Modern Grid Pattern - More subtle */}
+      <div className="absolute inset-0 opacity-[0.07]" 
            style={{ 
-             backgroundImage: 'linear-gradient(to right, #3b82f622 1px, transparent 1px), linear-gradient(to bottom, #3b82f622 1px, transparent 1px)', 
+             backgroundImage: 'linear-gradient(to right, #3b82f611 1px, transparent 1px), linear-gradient(to bottom, #3b82f611 1px, transparent 1px)', 
              backgroundSize: '80px 80px' 
            }} 
       />
       
-      {/* Floating Sparkles - More of them and brighter */}
-      {[...Array(40)].map((_, i) => (
+      {/* Techy Bits: Small Squares */}
+      {[...Array(15)].map((_, i) => (
         <motion.div
-          key={i}
-          className="absolute w-[3px] h-[3px] bg-blue-300 rounded-full shadow-[0_0_8px_#3b82f6]"
+          key={`bit-${i}`}
+          style={{ 
+            x: useTransform(mouseX, [-1, 1], [Math.random() * -30, Math.random() * 30]),
+            y: useTransform(mouseY, [-1, 1], [Math.random() * -30, Math.random() * 30])
+          }}
+          className="absolute w-1 h-1 border border-blue-400/20"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
-            opacity: Math.random() * 0.6
           }}
           animate={{
-            y: [null, Math.random() * -100 + "px"],
-            opacity: [0, 0.8, 0]
+            rotate: 360,
+            opacity: [0.2, 0.5, 0.2]
           }}
           transition={{
-            duration: 4 + Math.random() * 8,
+            duration: 10 + Math.random() * 10,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      ))}
+
+      {/* Floating Sparkles - Subtle */}
+      {[...Array(25)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-[2px] h-[2px] bg-blue-300 rounded-full shadow-[0_0_5px_#3b82f6]"
+          initial={{
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+            opacity: Math.random() * 0.3
+          }}
+          animate={{
+            y: [null, Math.random() * -80 + "px"],
+            opacity: [0, 0.5, 0]
+          }}
+          transition={{
+            duration: 5 + Math.random() * 10,
             repeat: Infinity,
             ease: "easeInOut",
             delay: Math.random() * 5
