@@ -186,24 +186,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div className="glass-card p-8">
-              <h3 className="text-lg font-bold text-white mb-6">Our Services</h3>
-              <div className="grid grid-cols-1 gap-3">
-                {[
-                  "Web Development",
-                  "Mobile Applications",
-                  "SaaS Products",
-                  "UI/UX Design",
-                  "API Integration"
-                ].map((s, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm text-slate-500">
-                    <div className="w-1 h-1 rounded-full bg-blue-500/50" />
-                    {s}
-                  </div>
-                ))}
-              </div>
-            </div>
+
           </motion.div>
         </div>
       </div>

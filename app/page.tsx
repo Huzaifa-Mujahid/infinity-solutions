@@ -197,7 +197,7 @@ export default function HomePage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden flex flex-col items-center text-center">
+      <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden flex flex-col items-center text-center">
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -242,33 +242,7 @@ export default function HomePage() {
             </Link>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex items-center justify-center gap-8 md:gap-16 pt-12 border-t border-slate-800/50"
-          >
-            <div className="flex flex-col items-center">
-              <span className="text-white font-bold text-2xl md:text-3xl mb-1">
-                <Counter value={150} suffix="+" />
-              </span>
-              <span className="text-slate-500 text-sm">Projects</span>
-            </div>
-            <div className="h-10 w-px bg-slate-800" />
-            <div className="flex flex-col items-center">
-              <span className="text-white font-bold text-2xl md:text-3xl mb-1">
-                <Counter value={50} suffix="+" />
-              </span>
-              <span className="text-slate-500 text-sm">Clients</span>
-            </div>
-            <div className="h-10 w-px bg-slate-800" />
-            <div className="flex flex-col items-center">
-              <span className="text-white font-bold text-2xl md:text-3xl mb-1">
-                <Counter value={8} suffix="+" />
-              </span>
-              <span className="text-slate-500 text-sm">Years</span>
-            </div>
-          </motion.div>
+
         </div>
         
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
@@ -359,7 +333,7 @@ export default function HomePage() {
       </motion.section>
 
       {/* How We Work Section */}
-      <motion.section {...sectionEntrance} className="section-space md:py-32 relative">
+      <motion.section {...sectionEntrance} className="section-space md:py-20 relative">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
             <div className="sticky top-32">
@@ -483,7 +457,7 @@ export default function HomePage() {
         <div className="container max-w-7xl mx-auto px-6">
           <div className="text-center mb-24">
             <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">CLIENT SUCCESS</span>
-            <h2 className="text-3xl md:text-6xl font-bold text-gradient mb-6">Global Impact Stories</h2>
+            <h2 className="text-3xl md:text-6xl font-bold text-gradient mb-6">Impact Stories</h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto">Hear directly from the founders and leaders we've partnered with.</p>
           </div>
         </div>
@@ -519,36 +493,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Row 2 - Left to Right (Compact) */}
-        <div className="flex overflow-hidden relative">
-          <div className="flex animate-marquee-reverse whitespace-nowrap">
-            {[...testimonials, ...testimonials, ...testimonials].reverse().map((t, i) => (
-              <div key={i} className="glass-card p-6 min-w-[300px] md:min-w-[360px] max-w-[360px] mx-4 shrink-0 whitespace-normal relative group">
-                <div className="absolute top-4 right-6 text-blue-500/5 group-hover:text-blue-500/10 transition-colors">
-                  <Quote size={40} />
-                </div>
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, starIdx) => (
-                    <Star key={starIdx} className="h-3 w-3 text-amber-400 fill-amber-400" />
-                  ))}
-                </div>
-                <p className="text-slate-300 text-sm leading-relaxed mb-6 italic">"{t.quote}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-slate-800">
-                    <Image src={t.image || "/placeholder.svg"} alt={t.name} width={40} height={40} className="object-cover" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-bold text-xs">{t.name}</h4>
-                    <p className="text-blue-400 text-[9px] font-bold uppercase tracking-wider">{t.title}</p>
-                    <p className="text-slate-500 text-[9px] flex items-center gap-1">
-                      <Globe size={8} /> {t.location}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         {/* Scrolling Brand Bar */}
         <div className="mt-20 py-12 border-t border-slate-800/50 overflow-hidden relative">

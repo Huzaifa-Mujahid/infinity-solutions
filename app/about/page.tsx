@@ -194,7 +194,7 @@ export default function AboutPage() {
                       src={member.image || "/placeholder.svg"}
                       alt={member.name}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="object-cover transition-all duration-500"
                     />
                   </div>
                   <div>
