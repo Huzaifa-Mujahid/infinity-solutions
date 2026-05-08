@@ -305,7 +305,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <Link href="/contact" className="btn-primary inline-flex items-center gap-2 group/btn">
+                    <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold transition-all shadow-lg shadow-blue-500/20 group/btn text-sm">
                       Get Started
                       <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Link>
