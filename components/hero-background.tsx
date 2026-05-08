@@ -16,9 +16,9 @@ export default function HeroBackground() {
     let particles: Particle[] = []
     const mouse = { x: 0, y: 0, active: false, lerpX: 0, lerpY: 0 }
 
-    const particleCount = 100
-    const connectionDistance = 160
-    const mouseRadius = 200
+    const particleCount = 120 // Increased for better visibility
+    const connectionDistance = 170
+    const mouseRadius = 250 // Larger interaction area
 
     class Particle {
       x: number
@@ -36,31 +36,31 @@ export default function HeroBackground() {
       reset() {
         this.x = Math.random() * canvas!.width
         this.y = Math.random() * canvas!.height
-        this.z = Math.random() * 2 // Simulation of depth
-        this.vx = (Math.random() - 0.5) * (0.3 + this.z * 0.2)
-        this.vy = (Math.random() - 0.5) * (0.3 + this.z * 0.2)
-        this.size = (Math.random() * 1.5 + 0.5) * (this.z + 0.5)
-        this.opacity = (Math.random() * 0.4 + 0.2) * (this.z / 2)
+        this.z = Math.random() * 2 
+        // Increased velocity for "fast" feel
+        this.vx = (Math.random() - 0.5) * (0.8 + this.z * 0.4)
+        this.vy = (Math.random() - 0.5) * (0.8 + this.z * 0.4)
+        this.size = (Math.random() * 2 + 1) * (this.z + 0.5)
+        this.opacity = (Math.random() * 0.5 + 0.3) * (this.z / 2 + 0.5)
       }
 
       update() {
         this.x += this.vx
         this.y += this.vy
 
-        if (this.x < 0) this.x = canvas!.width
-        if (this.x > canvas!.width) this.x = 0
-        if (this.y < 0) this.y = canvas!.height
-        if (this.y > canvas!.height) this.y = 0
+        if (this.x < -50) this.x = canvas!.width + 50
+        if (this.x > canvas!.width + 50) this.x = -50
+        if (this.y < -50) this.y = canvas!.height + 50
+        if (this.y > canvas!.height + 50) this.y = -50
 
-        // Subtle mouse repulsion
         if (mouse.active) {
           const dx = mouse.lerpX - this.x
           const dy = mouse.lerpY - this.y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 150) {
-            const force = (150 - dist) / 150
-            this.x -= dx * force * 0.02
-            this.y -= dy * force * 0.02
+          if (dist < 200) {
+            const force = (200 - dist) / 200
+            this.x -= dx * force * 0.03
+            this.y -= dy * force * 0.03
           }
         }
       }
@@ -72,10 +72,9 @@ export default function HeroBackground() {
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
         ctx.fill()
 
-        // Glow for larger/closer particles
-        if (this.z > 1.5) {
-          ctx.shadowBlur = 10
-          ctx.shadowColor = "rgba(59, 130, 246, 0.4)"
+        if (this.z > 1.2) {
+          ctx.shadowBlur = 15
+          ctx.shadowColor = "rgba(59, 130, 246, 0.6)"
         } else {
           ctx.shadowBlur = 0
         }
@@ -91,17 +90,14 @@ export default function HeroBackground() {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.shadowBlur = 0 // Reset shadow for lines
-
-      // Smooth mouse transition
-      mouse.lerpX += (mouse.x - mouse.lerpX) * 0.1
-      mouse.lerpY += (mouse.y - mouse.lerpY) * 0.1
+      
+      mouse.lerpX += (mouse.x - mouse.lerpX) * 0.12
+      mouse.lerpY += (mouse.y - mouse.lerpY) * 0.12
 
       particles.forEach((p, index) => {
         p.update()
         p.draw()
 
-        // Connections
         for (let j = index + 1; j < particles.length; j++) {
           const p2 = particles[j]
           const dx = p.x - p2.x
@@ -109,26 +105,26 @@ export default function HeroBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy)
 
           if (dist < connectionDistance) {
-            const alpha = (1 - dist / connectionDistance) * 0.15 * Math.min(p.opacity, p2.opacity)
+            // Increased alpha for better visibility
+            const alpha = (1 - dist / connectionDistance) * 0.3 * Math.min(p.opacity, p2.opacity)
             ctx.beginPath()
             ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`
-            ctx.lineWidth = 0.8
+            ctx.lineWidth = 1.0
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p2.x, p2.y)
             ctx.stroke()
           }
         }
 
-        // Mouse connection
         if (mouse.active) {
           const mdx = p.x - mouse.lerpX
           const mdy = p.y - mouse.lerpY
           const mdist = Math.sqrt(mdx * mdx + mdy * mdy)
           if (mdist < mouseRadius) {
-            const mAlpha = (1 - mdist / mouseRadius) * 0.3
+            const mAlpha = (1 - mdist / mouseRadius) * 0.5
             ctx.beginPath()
             ctx.strokeStyle = `rgba(59, 130, 246, ${mAlpha})`
-            ctx.lineWidth = 1.2
+            ctx.lineWidth = 1.5
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(mouse.lerpX, mouse.lerpY)
             ctx.stroke()
@@ -179,10 +175,10 @@ export default function HeroBackground() {
       <canvas
         ref={canvasRef}
         className="w-full h-full"
-        style={{ filter: "contrast(1.1) brightness(1.1)" }}
+        style={{ filter: "contrast(1.2) brightness(1.2)" }}
       />
-      {/* Ambient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#080B10] via-transparent to-[#080B10] opacity-60" />
+      {/* Premium Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#080B10_100%)] opacity-40" />
     </div>
   )
 }
