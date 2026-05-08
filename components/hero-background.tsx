@@ -37,17 +37,17 @@ export default function HeroBackground() {
   const y3 = useTransform(mouseY, [-1, 1], [40, -40])
 
   return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none -z-10 bg-[#080B10]">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
       {/* Background Gradients */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1e3a8a33,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#3b82f633,transparent_70%)]" />
       
       {/* Animated Blobs */}
       <motion.div 
         style={{ x: x1, y: y1 }}
-        className="absolute top-[-15%] right-[5%] w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[120px]"
+        className="absolute top-[-15%] right-[5%] w-[600px] h-[600px] bg-blue-500/25 rounded-full blur-[100px]"
         animate={{
           scale: [1, 1.2, 1],
-          opacity: [0.15, 0.25, 0.15],
+          opacity: [0.2, 0.4, 0.2],
         }}
         transition={{
           duration: 8,
@@ -58,10 +58,10 @@ export default function HeroBackground() {
       
       <motion.div 
         style={{ x: x2, y: y2 }}
-        className="absolute bottom-[-10%] left-[-5%] w-[800px] h-[800px] bg-indigo-600/10 rounded-full blur-[150px]"
+        className="absolute bottom-[-10%] left-[-5%] w-[800px] h-[800px] bg-blue-600/20 rounded-full blur-[130px]"
         animate={{
           scale: [1, 1.1, 1],
-          opacity: [0.05, 0.15, 0.05],
+          opacity: [0.15, 0.3, 0.15],
         }}
         transition={{
           duration: 12,
@@ -73,10 +73,10 @@ export default function HeroBackground() {
 
       <motion.div 
         style={{ x: x3, y: y3 }}
-        className="absolute top-[20%] left-[20%] w-[400px] h-[400px] bg-blue-400/10 rounded-full blur-[100px]"
+        className="absolute top-[20%] left-[20%] w-[400px] h-[400px] bg-blue-400/20 rounded-full blur-[80px]"
         animate={{
           scale: [1, 1.3, 1],
-          opacity: [0.1, 0.2, 0.1],
+          opacity: [0.15, 0.35, 0.15],
         }}
         transition={{
           duration: 10,
@@ -86,30 +86,30 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Modern Grid Pattern */}
-      <div className="absolute inset-0" 
+      {/* Modern Grid Pattern - More visible */}
+      <div className="absolute inset-0 opacity-20" 
            style={{ 
-             backgroundImage: 'linear-gradient(to right, #1e293b22 1px, transparent 1px), linear-gradient(to bottom, #1e293b22 1px, transparent 1px)', 
-             backgroundSize: '60px 60px' 
+             backgroundImage: 'linear-gradient(to right, #3b82f622 1px, transparent 1px), linear-gradient(to bottom, #3b82f622 1px, transparent 1px)', 
+             backgroundSize: '80px 80px' 
            }} 
       />
       
-      {/* Floating Sparkles */}
-      {[...Array(20)].map((_, i) => (
+      {/* Floating Sparkles - More of them and brighter */}
+      {[...Array(40)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-[2px] h-[2px] bg-blue-400 rounded-full"
+          className="absolute w-[3px] h-[3px] bg-blue-300 rounded-full shadow-[0_0_8px_#3b82f6]"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
-            opacity: Math.random() * 0.4
+            opacity: Math.random() * 0.6
           }}
           animate={{
-            y: [null, Math.random() * -50 + "px"],
-            opacity: [0, 0.6, 0]
+            y: [null, Math.random() * -100 + "px"],
+            opacity: [0, 0.8, 0]
           }}
           transition={{
-            duration: 3 + Math.random() * 7,
+            duration: 4 + Math.random() * 8,
             repeat: Infinity,
             ease: "easeInOut",
             delay: Math.random() * 5
