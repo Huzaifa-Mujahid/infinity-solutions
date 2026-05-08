@@ -42,43 +42,63 @@ const featuredProjects = [
 
 const services = [
   {
-    title: "Custom Web Applications",
-    description: "Full stack web development using React, Laravel, Node.js, and Next.js",
-    icon: Code,
-    technologies: ["React", "Laravel", "Node.js", "Next.js"],
+    title: "SaaS & MVP Development",
+    description: "Launch scalable SaaS products and validate ideas faster. We build secure, high performance MVPs focused on growth and scalability.",
+    icon: Rocket,
+    technologies: ["Next.js", "Node.js", "AWS", "Stripe"],
+    features: ["Multi-Tenant Architecture", "MVP Prototyping", "Payment Integration", "Admin Dashboards"],
     number: "01"
   },
   {
-    title: "Mobile App Development",
-    description: "Cross-platform and native mobile apps for iOS and Android",
-    icon: Globe,
-    technologies: ["Flutter", "React Native", "iOS", "Android"],
+    title: "AI Development Services",
+    description: "Build intelligent AI powered applications and automation systems that improve productivity and enhance user experiences.",
+    icon: Cpu,
+    technologies: ["OpenAI", "Python", "LangChain", "Next.js"],
+    features: ["Custom AI Apps", "LLM Integrations", "Workflow Automation", "AI Chatbots"],
     number: "02"
   },
   {
-    title: "SaaS Product Development",
-    description: "From MVP to scalable SaaS platforms with enterprise features",
-    icon: Rocket,
-    technologies: ["Full Stack", "Cloud", "Scalable Architecture"],
+    title: "Custom Web Applications",
+    description: "Full stack web development using modern frameworks for scalable and robust enterprise solutions.",
+    icon: Code,
+    technologies: ["React", "Laravel", "Node.js", "Next.js"],
     number: "03"
   },
   {
-    title: "UI/UX Design Solutions",
-    description: "User-centric design focused on conversion and seamless experience",
-    icon: Cpu,
-    technologies: ["Figma", "Adobe XD", "Prototyping"],
+    title: "Mobile App Development",
+    description: "Cross-platform and native mobile apps for iOS and Android with seamless performance.",
+    icon: Globe,
+    technologies: ["Flutter", "React Native", "iOS", "Android"],
     number: "04"
   },
   {
-    title: "Backend & API Systems",
-    description: "Robust and secure backend architectures with high performance",
+    title: "UI/UX Design Solutions",
+    description: "User-centric design focused on conversion and providing a seamless, premium user experience.",
     icon: Zap,
-    technologies: ["Node.js", "Python", "PostgreSQL", "Redis"],
+    technologies: ["Figma", "Adobe XD", "Prototyping"],
     number: "05"
   }
 ]
 
 const testimonials = [
+  {
+    quote: "We had the pleasure of working with Infinity Solutions Team on developing our Al-Hanna Healthcare Platform, and the experience was outstanding. The platform they built is both web and mobile-friendly. Their 24/7 availability ensured smooth project delivery. Highly Recommended team.",
+    name: "Zain Jameel",
+    title: "Al Hanna Healthcare Platform",
+    location: "Dubai, UAE 🇦🇪",
+    image: "/images/clients/zain.jpg",
+    rating: 5,
+    company: "Al Hanna"
+  },
+  {
+    quote: "Infinity Solutions Team took on the project in the middle of it, provided a lot of insights, and finished it. Their 24/7 availability meant I could get updates whenever needed. I couldn't be happier with everything. They will be my first call for any future projects.",
+    name: "Arthur Carmazzi",
+    title: "Leadership Development Specialist",
+    location: "Singapore 🇸🇬",
+    image: "/images/clients/arthur.jpg",
+    rating: 5,
+    company: "Directive Communication"
+  },
   {
     quote: "Infinity Solutions Team are true professionals in development. They handled our project from the ground up, delivering a clean, scalable, and fully functional product.",
     name: "Niko Memmos",
@@ -105,24 +125,6 @@ const testimonials = [
     image: "/images/clients/fassahat.jpg",
     rating: 5,
     company: "Emergi Mentors"
-  },
-  {
-    quote: "Exceptional UI/UX design that significantly improved our user engagement. Highly recommended for premium designs.",
-    name: "Sarah Johnson",
-    title: "TechFlow Systems",
-    location: "Ontario, Canada 🇨🇦",
-    image: "/placeholder.svg",
-    rating: 5,
-    company: "TechFlow"
-  },
-  {
-    quote: "Their backend architecture is top-notch. Secure, scalable, and lightning fast. A true partner for any tech startup.",
-    name: "Mark Verdon",
-    title: "Aero Logistics",
-    location: "Berlin, Germany 🇩🇪",
-    image: "/placeholder.svg",
-    rating: 5,
-    company: "AeroLog"
   },
 ]
 
@@ -261,12 +263,12 @@ export default function HomePage() {
               <div className="glass-card glass-card-hover p-10 h-full relative overflow-hidden flex flex-col">
                 <div className="text-[80px] font-black text-white/[0.03] absolute top-2 right-4 leading-none pointer-events-none">01</div>
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20">
-                  <Code className="h-6 w-6 text-white" />
+                  <Rocket className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Custom Web Applications</h3>
-                <p className="text-slate-400 mb-8 max-w-sm">Full stack web development using React, Laravel, Node.js, and Next.js.</p>
+                <h3 className="text-2xl font-bold text-white mb-4">SaaS & MVP Development</h3>
+                <p className="text-slate-400 mb-8 max-w-sm">Launch scalable SaaS products and validate ideas faster with modern technologies and rapid development workflows.</p>
                 <div className="mt-auto flex flex-wrap gap-2">
-                  {["React", "Laravel", "Node.js", "Next.js"].map(tech => (
+                  {["Next.js", "Node.js", "AWS", "Stripe"].map(tech => (
                     <span key={tech} className="px-3 py-1 rounded-full bg-blue-500/5 border border-blue-500/10 text-[10px] text-blue-400 uppercase tracking-wider font-bold">
                       {tech}
                     </span>
@@ -278,12 +280,12 @@ export default function HomePage() {
               <div className="glass-card glass-card-hover p-10 h-full relative overflow-hidden flex flex-col">
                 <div className="text-[80px] font-black text-white/[0.03] absolute top-2 right-4 leading-none pointer-events-none">02</div>
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center mb-8 shadow-lg shadow-blue-500/20">
-                  <Globe className="h-6 w-6 text-white" />
+                  <Cpu className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">Mobile App Development</h3>
-                <p className="text-slate-400 mb-8 max-w-sm">Cross-platform and native mobile apps for iOS and Android.</p>
+                <h3 className="text-2xl font-bold text-white mb-4">AI Development Services</h3>
+                <p className="text-slate-400 mb-8 max-w-sm">Build intelligent AI powered applications and automation systems tailored for startups and enterprise workflows.</p>
                 <div className="mt-auto flex flex-wrap gap-2">
-                  {["Flutter", "React Native", "iOS", "Android"].map(tech => (
+                  {["OpenAI", "Python", "LangChain", "Next.js"].map(tech => (
                     <span key={tech} className="px-3 py-1 rounded-full bg-blue-500/5 border border-blue-500/10 text-[10px] text-blue-400 uppercase tracking-wider font-bold">
                       {tech}
                     </span>
@@ -296,20 +298,20 @@ export default function HomePage() {
               <div className="glass-card glass-card-hover p-8 h-full relative overflow-hidden flex flex-col">
                 <div className="text-[60px] font-black text-white/[0.02] absolute top-2 right-4 leading-none pointer-events-none">03</div>
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center mb-6">
-                  <Rocket className="h-5 w-5 text-white" />
+                  <Code className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">SaaS Development</h3>
-                <p className="text-slate-400 text-sm mb-6">From MVP to scalable SaaS platforms with enterprise features.</p>
+                <h3 className="text-lg font-bold text-white mb-3">Custom Web Apps</h3>
+                <p className="text-slate-400 text-sm mb-6">Scalable and robust enterprise solutions using modern frameworks.</p>
               </div>
             </motion.div>
             <motion.div variants={cardVariants} className="md:col-span-2">
               <div className="glass-card glass-card-hover p-8 h-full relative overflow-hidden flex flex-col">
                 <div className="text-[60px] font-black text-white/[0.02] absolute top-2 right-4 leading-none pointer-events-none">04</div>
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center mb-6">
-                  <Cpu className="h-5 w-5 text-white" />
+                  <Globe className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">UI/UX Design</h3>
-                <p className="text-slate-400 text-sm mb-6">User-centric design focused on conversion and experience.</p>
+                <h3 className="text-lg font-bold text-white mb-3">Mobile Development</h3>
+                <p className="text-slate-400 text-sm mb-6">Cross-platform and native apps for iOS and Android.</p>
               </div>
             </motion.div>
             <motion.div variants={cardVariants} className="md:col-span-2">
@@ -318,8 +320,8 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center mb-6">
                   <Zap className="h-5 w-5 text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">Backend & API</h3>
-                <p className="text-slate-400 text-sm mb-6">Robust and secure architectures with high performance.</p>
+                <h3 className="text-lg font-bold text-white mb-3">UI/UX Design</h3>
+                <p className="text-slate-400 text-sm mb-6">User-centric design focused on conversion and experience.</p>
               </div>
             </motion.div>
           </motion.div>

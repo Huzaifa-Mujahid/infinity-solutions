@@ -5,12 +5,14 @@ import { Linkedin, Mail, Twitter, Github, ArrowRight } from "lucide-react"
 
 const navigation = {
   services: [
-    { name: "Frontend Development", href: "/services#frontend-development" },
-    { name: "Backend Development", href: "/services#backend-development" },
-    { name: "Full Stack Development", href: "/services#full-stack-development" },
-    { name: "Mobile Development", href: "/services#mobile-development" },
-    { name: "UI/UX Design", href: "/services#ui-ux-design" },
-    { name: "DevOps Solutions", href: "/services#devops" },
+    { name: "SaaS & MVP", href: "/services#saas-mvp" },
+    { name: "AI Development", href: "/services#ai" },
+    { name: "Full Stack", href: "/services#full-stack" },
+    { name: "Mobile App", href: "/services#mobile" },
+    { name: "Frontend", href: "/services#frontend" },
+    { name: "Backend", href: "/services#backend" },
+    { name: "UI/UX Design", href: "/services#ui-ux" },
+    { name: "DevOps", href: "/services#devops" },
   ],
   company: [
     { name: "About Us", href: "/about" },
