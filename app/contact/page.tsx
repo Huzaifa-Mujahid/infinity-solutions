@@ -40,23 +40,29 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="relative pt-24 pb-16 md:pt-48 md:pb-40 overflow-hidden">
-      <HeroBackground />
-      <div className="container max-w-7xl mx-auto px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-24"
-        >
-          <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">GET IN TOUCH</span>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 md:mb-8 text-gradient">
-            Bring Your Ideas To Life
-          </h1>
-          <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-xl leading-relaxed px-2">
-            We work with startups, businesses, and enterprises worldwide to build modern web, mobile, SaaS, and AI powered applications
-          </p>
-        </motion.div>
+    <div className="relative">
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-16 md:pt-48 md:pb-40 overflow-hidden flex flex-col items-center text-center">
+        <HeroBackground />
+        <div className="container max-w-7xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">GET IN TOUCH</span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 md:mb-8 text-gradient">
+              Bring Your Ideas To Life
+            </h1>
+            <p className="max-w-3xl mx-auto text-slate-400 text-base md:text-xl leading-relaxed px-2">
+              We work with startups, businesses, and enterprises worldwide to build modern web, mobile, SaaS, and AI powered applications
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-24">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           {/* Contact Form */}
