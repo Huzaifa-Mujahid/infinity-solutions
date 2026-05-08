@@ -211,17 +211,18 @@ export default function HomePage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8"
           >
-            <span className="text-white block">Infinity Solutions</span>
-            <span className="text-blue-gradient">Transforming Ideas Into Infinite Possibilities</span>
+            <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">Infinity Solutions</span>
+            <span className="text-white block">Turning Vision Into</span>
+            <span className="text-blue-gradient">Powerful Digital Experiences</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="max-w-2xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12"
+            className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12"
           >
-            Full stack development company dedicated to creating powerful, scalable, and future-ready digital solutions with 24/7 worldwide support
+            We create high performance web and mobile applications, SaaS platforms, and AI powered solutions tailored for startups, businesses, and growing brands worldwide
           </motion.p>
 
           <motion.div
