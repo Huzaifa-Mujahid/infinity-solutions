@@ -16,9 +16,9 @@ export default function HeroBackground() {
     let particles: Particle[] = []
     const mouse = { x: 0, y: 0, active: false, lerpX: 0, lerpY: 0 }
 
-    const particleCount = 90
-    const connectionDistance = 150
-    const mouseRadius = 200
+    const particleCount = 70 // Minimal count
+    const connectionDistance = 140
+    const mouseRadius = 180
 
     class Particle {
       x: number
@@ -35,11 +35,10 @@ export default function HeroBackground() {
       reset() {
         this.x = Math.random() * canvas!.width
         this.y = Math.random() * canvas!.height
-        // Moderate velocity
-        this.vx = (Math.random() - 0.5) * 0.6
-        this.vy = (Math.random() - 0.5) * 0.6
-        this.size = Math.random() * 1.5 + 0.5
-        this.opacity = Math.random() * 0.3 + 0.2
+        this.vx = (Math.random() - 0.5) * 0.4
+        this.vy = (Math.random() - 0.5) * 0.4
+        this.size = Math.random() * 1.2 + 0.5
+        this.opacity = Math.random() * 0.2 + 0.1 // Very minimal opacity
       }
 
       update() {
@@ -55,10 +54,10 @@ export default function HeroBackground() {
           const dx = mouse.lerpX - this.x
           const dy = mouse.lerpY - this.y
           const dist = Math.sqrt(dx * dx + dy * dy)
-          if (dist < 150) {
-            const force = (150 - dist) / 150
-            this.x -= dx * force * 0.02
-            this.y -= dy * force * 0.02
+          if (dist < 120) {
+            const force = (120 - dist) / 120
+            this.x -= dx * force * 0.015
+            this.y -= dy * force * 0.015
           }
         }
       }
@@ -82,8 +81,8 @@ export default function HeroBackground() {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       
-      mouse.lerpX += (mouse.x - mouse.lerpX) * 0.1
-      mouse.lerpY += (mouse.y - mouse.lerpY) * 0.1
+      mouse.lerpX += (mouse.x - mouse.lerpX) * 0.08
+      mouse.lerpY += (mouse.y - mouse.lerpY) * 0.08
 
       particles.forEach((p, index) => {
         p.update()
@@ -96,10 +95,10 @@ export default function HeroBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy)
 
           if (dist < connectionDistance) {
-            const alpha = (1 - dist / connectionDistance) * 0.15
+            const alpha = (1 - dist / connectionDistance) * 0.08 // Very subtle lines
             ctx.beginPath()
             ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`
-            ctx.lineWidth = 0.8
+            ctx.lineWidth = 0.6
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(p2.x, p2.y)
             ctx.stroke()
@@ -111,10 +110,10 @@ export default function HeroBackground() {
           const mdy = p.y - mouse.lerpY
           const mdist = Math.sqrt(mdx * mdx + mdy * mdy)
           if (mdist < mouseRadius) {
-            const mAlpha = (1 - mdist / mouseRadius) * 0.3
+            const mAlpha = (1 - mdist / mouseRadius) * 0.15
             ctx.beginPath()
             ctx.strokeStyle = `rgba(59, 130, 246, ${mAlpha})`
-            ctx.lineWidth = 1.0
+            ctx.lineWidth = 0.8
             ctx.moveTo(p.x, p.y)
             ctx.lineTo(mouse.lerpX, mouse.lerpY)
             ctx.stroke()
@@ -164,9 +163,9 @@ export default function HeroBackground() {
     <div className="absolute inset-0 pointer-events-none -z-10 bg-[#080B10]">
       <canvas
         ref={canvasRef}
-        className="w-full h-full opacity-70"
+        className="w-full h-full opacity-60"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#080B10] via-transparent to-[#080B10] opacity-40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#080B10] via-transparent to-[#080B10] opacity-30" />
     </div>
   )
 }

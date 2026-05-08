@@ -200,7 +200,7 @@ export default function HomePage() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-8 md:pt-32 md:pb-12 overflow-hidden flex flex-col items-center text-center">
+      <section className="relative pt-24 pb-0 md:pt-32 md:pb-0 overflow-hidden flex flex-col items-center text-center">
         <HeroBackground />
         <div className="container max-w-7xl mx-auto px-6 relative z-10">
 

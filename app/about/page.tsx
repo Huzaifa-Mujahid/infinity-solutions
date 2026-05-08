@@ -117,7 +117,7 @@ export default function AboutPage() {
             About Infinity Solutions
           </h1>
           <p className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
-            Technology has no limits — and neither should your ideas. We are a tight-knit team of experts built for speed, quality, and collaboration.
+            From startups to enterprises, we help businesses transform ideas into powerful digital experiences through expert full stack development
           </p>
         </motion.div>
 

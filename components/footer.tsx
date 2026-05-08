@@ -5,10 +5,10 @@ import { Linkedin, Mail, Twitter, Github, ArrowRight } from "lucide-react"
 
 const navigation = {
   services: [
-    { name: "SaaS & MVP", href: "/services#saas-mvp" },
+    { name: "SaaS & MVP Development", href: "/services#saas-mvp" },
     { name: "AI Development", href: "/services#ai" },
-    { name: "Full Stack", href: "/services#full-stack" },
-    { name: "Mobile App", href: "/services#mobile" },
+    { name: "Full Stack Development", href: "/services#full-stack" },
+    { name: "Mobile App Development", href: "/services#mobile" },
     { name: "UI/UX Design", href: "/services#ui-ux" },
   ],
   company: [

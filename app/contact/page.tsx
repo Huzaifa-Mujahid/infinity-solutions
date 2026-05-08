@@ -51,10 +51,10 @@ export default function ContactPage() {
         >
           <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">GET IN TOUCH</span>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8 text-gradient">
-            Let's Build Something
+            Bring Your Ideas To Life
           </h1>
           <p className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
-            Ready to transform your ideas into infinite possibilities? Our global team is available 24/7 to discuss your vision.
+            We work with startups, businesses, and enterprises worldwide to build modern web, mobile, SaaS, and AI powered applications
           </p>
         </motion.div>
 

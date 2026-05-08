@@ -117,10 +117,10 @@ export default function ProjectsPage() {
         >
           <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">OUR WORK</span>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8 text-gradient">
-            Portfolio
+            Projects
           </h1>
           <p className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
-            Explore our portfolio of innovative digital solutions delivered across the globe. From startups to enterprises, we build products that scale.
+            Discover a collection of scalable web, mobile, SaaS, and AI solutions crafted for startups, businesses, and enterprises worldwide
           </p>
         </motion.div>
 

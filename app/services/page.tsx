@@ -230,10 +230,10 @@ export default function ServicesPage() {
         >
           <span className="text-blue-400 text-xs tracking-[0.3em] font-semibold uppercase mb-4 block">WHAT WE DO</span>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-8 text-gradient">
-            Full Stack Development Services
+            Web, Mobile & AI Development Services
           </h1>
           <p className="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
-            Comprehensive full stack development solutions using modern technologies and frameworks to build scalable, secure, and high-performance applications worldwide.
+            Comprehensive development services focused on building innovative, user friendly, and scalable applications for modern businesses
           </p>
         </motion.div>
 
