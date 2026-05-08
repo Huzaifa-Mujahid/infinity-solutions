@@ -168,7 +168,8 @@ const sectionEntrance = {
 
 export default function ServicesPage() {
   return (
-    <div className="relative pt-32 pb-24 md:pt-48 md:pb-40">
+    <div className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
+      <HeroBackground />
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
