@@ -495,7 +495,7 @@ export default function HomePage() {
 
         {/* Scrolling Brand Bar */}
         <div className="mt-20 py-12 border-t border-slate-800/50 overflow-hidden relative">
-          <div className="flex animate-marquee whitespace-nowrap opacity-20 gap-20">
+          <div className="flex animate-marquee whitespace-nowrap opacity-20 gap-20" style={{ animationDuration: '20s' }}>
             {[...Array(3)].map((_, i) => (
               <div key={i} className="flex gap-20 shrink-0">
                 {["EMERGI MENTORS", "Al Hanna Clinic", "HOT SEATS", "VITALIS UK", "SAFE HEAVEN", "TEAMPLAY", "TGFC UK", "DIALOG AI", "Hartman uk", "Kanova", "Fan District", "Site Swift"].map((brand, bIdx) => (
