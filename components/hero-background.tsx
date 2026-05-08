@@ -71,27 +71,27 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Techy Layer: Floating Lines/Particles */}
-      {[...Array(12)].map((_, i) => (
+      {/* Techy Layer: Floating Lines/Particles - MORE VISIBLE */}
+      {[...Array(15)].map((_, i) => (
         <motion.div
           key={`line-${i}`}
           style={{ 
-            x: useTransform(mouseX, [-1, 1], [Math.random() * -50, Math.random() * 50]),
-            y: useTransform(mouseY, [-1, 1], [Math.random() * -50, Math.random() * 50])
+            x: useTransform(mouseX, [-1, 1], [Math.random() * -80, Math.random() * 80]),
+            y: useTransform(mouseY, [-1, 1], [Math.random() * -80, Math.random() * 80])
           }}
-          className="absolute bg-blue-400/10"
+          className="absolute bg-blue-500/20 shadow-[0_0_8px_rgba(59,130,246,0.2)]"
           initial={{
-            width: Math.random() * 100 + 50,
-            height: 1,
+            width: Math.random() * 150 + 80,
+            height: 1.5,
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
             rotate: Math.random() * 360
           }}
           animate={{
-            opacity: [0.1, 0.3, 0.1],
+            opacity: [0.2, 0.5, 0.2],
           }}
           transition={{
-            duration: 5 + Math.random() * 5,
+            duration: 6 + Math.random() * 6,
             repeat: Infinity,
             ease: "easeInOut"
           }}
@@ -106,25 +106,25 @@ export default function HeroBackground() {
            }} 
       />
       
-      {/* Techy Bits: Small Squares */}
-      {[...Array(15)].map((_, i) => (
+      {/* Techy Bits: Small Squares - MORE VISIBLE */}
+      {[...Array(20)].map((_, i) => (
         <motion.div
           key={`bit-${i}`}
           style={{ 
-            x: useTransform(mouseX, [-1, 1], [Math.random() * -30, Math.random() * 30]),
-            y: useTransform(mouseY, [-1, 1], [Math.random() * -30, Math.random() * 30])
+            x: useTransform(mouseX, [-1, 1], [Math.random() * -40, Math.random() * 40]),
+            y: useTransform(mouseY, [-1, 1], [Math.random() * -40, Math.random() * 40])
           }}
-          className="absolute w-1 h-1 border border-blue-400/20"
+          className="absolute w-2 h-2 border border-blue-400/40 bg-blue-500/5"
           initial={{
             x: Math.random() * 100 + "%",
             y: Math.random() * 100 + "%",
           }}
           animate={{
             rotate: 360,
-            opacity: [0.2, 0.5, 0.2]
+            opacity: [0.3, 0.7, 0.3]
           }}
           transition={{
-            duration: 10 + Math.random() * 10,
+            duration: 8 + Math.random() * 8,
             repeat: Infinity,
             ease: "linear"
           }}
